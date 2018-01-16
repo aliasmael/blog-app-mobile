@@ -1,0 +1,3 @@
+ - Prepare enviroment
+    - install watchman
+    - npm install
