@@ -25,28 +25,40 @@ export default class FooterNav extends Component<IFooterNavProps>  {
 						style={this.props.selectedTab == "Home" ? style.buttonActive : {}}
 						active={this.props.selectedTab == "Home" ? true : false}
 					>
-						<Icon name="home" />
+						<Icon 
+							style={this.props.selectedTab == "Home" ? style.iconActive : style.icon}
+							name="home" 
+							/>
 					</Button>
 					<Button
 						onPress={() => this.props.openExplore()}
 						style={this.props.selectedTab == "Explore" ? style.buttonActive : {}}
 						active={this.props.selectedTab == "Explore" ? true : false}
 					>
-						<Icon name="search" />
+						<Icon 
+							style={this.props.selectedTab == "Explore" ? style.iconActive : style.icon}
+							name="search" 
+							/>
 					</Button>
 					<Button
 						onPress={() => this.props.openNotifications()}
 						style={this.props.selectedTab == "Notifications" ? style.buttonActive : {}}
 						active={this.props.selectedTab == "Notifications" ? true : false}
 					>
-						<Icon name="notifications" />
+						<Icon 
+							style={this.props.selectedTab == "Notifications" ? style.iconActive : style.icon}
+							name="notifications" 
+							/>
 					</Button>
 					<Button
 						onPress={() => this.props.openSetting()}
 						style={this.props.selectedTab == "Setting" ? style.buttonActive : {}}
 						active={this.props.selectedTab == "Setting" ? true : false}
 					>
-						<Icon name="ios-settings" />
+						<Icon 
+							style={this.props.selectedTab == "Setting" ? style.iconActive : style.icon}
+							name="ios-settings" 
+							/>
 					</Button>
 				</FooterTab>
 			</Footer>

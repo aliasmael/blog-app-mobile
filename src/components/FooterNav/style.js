@@ -1,12 +1,22 @@
 import { StyleSheet } from 'react-native'
 
+const textColor = '#757575'
+const activeColor = '#944a8e'
+
 const style = StyleSheet.create({
 	footer: {
-		backgroundColor: '#1c2026'
+		backgroundColor: '#fff'
 	},
 	buttonActive: {
-		backgroundColor: '#303648'
+		backgroundColor: '#fff'
+	},
+	icon: {
+		color: textColor
+	},
+	iconActive: {
+		color: activeColor
 	}
+
 })
 
 export default style
