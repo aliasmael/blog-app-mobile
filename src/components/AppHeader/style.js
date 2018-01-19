@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native'
 
+const textColor = '#0e0a1a'
+const activeColor = '#944a8e'
+
 const style = StyleSheet.create({
 	header: {
 		backgroundColor: '#fff'
@@ -14,13 +17,13 @@ const style = StyleSheet.create({
 		flex: 1,
 		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'flex-start'
+		justifyContent: 'center'
 	},
 	title: {
-		color: '#1c2026'
+		color: activeColor
 	},
 	icon: {
-		color: '#1c2026'
+		color: textColor
 	}
 })
 
