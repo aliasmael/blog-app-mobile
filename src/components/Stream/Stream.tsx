@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Component } from 'react'
 import { Image, View } from 'react-native'
-import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base'
+import { Container, Content, Card, CardItem, Thumbnail, Text, Left, Body, Right } from 'native-base'
 import * as moment from 'moment'
 import { Blog } from './Models'
 import style from './style'
