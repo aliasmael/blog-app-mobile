@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Component } from 'react'
-import { Image } from 'react-native'
+import { Image, View } from 'react-native'
 import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base'
 import * as moment from 'moment'
 import { Blog } from './Models'
@@ -30,8 +30,21 @@ export default class Stream extends Component<IStreamProps, IStreamState> {
 		return (
 			this.state.blogs.map(blog => (
 				<Container key={blog.id} style={style.container}>
-					<Content style={{padding: 0}}>
-						<Card style={{ flex: 0, padding: 0 }}>
+					<Content>
+						<Card>
+							<CardItem style={style.cardContent}>
+								<Body>
+									<Image source={blog.data.coverImage} style={style.coverImage} />
+									<View style={style.cardDetails}>
+										<Text style={style.title}>
+											{blog.data.title}
+										</Text>
+										<Text style={style.description} note>
+											{blog.data.decription}
+										</Text>
+									</View>
+								</Body>
+							</CardItem>
 							<CardItem>
 								<Left>
 									<Thumbnail source={require('../../../assets/images/user_default.png')} />
@@ -40,31 +53,6 @@ export default class Stream extends Component<IStreamProps, IStreamState> {
 										<Text note>{moment(blog.trace.created.at).format('MMM D')}</Text>
 									</Body>
 								</Left>
-							</CardItem>
-							<CardItem>
-								<Body>
-									<Image source={blog.data.coverImage} style={style.coverImage} />
-									<Text style={style.title}>
-										{blog.data.title}
-									</Text>
-									<Text style={style.description} note>
-										{blog.data.decription}
-									</Text>
-								</Body>
-							</CardItem>
-							<CardItem>
-								<Left>
-									<Button transparent>
-										<Icon active name="thumbs-up" />
-										<Text>12 Likes</Text>
-									</Button>
-								</Left>
-								<Body>
-									<Button transparent>
-										<Icon active name="chatbubbles" />
-										<Text>4 Comments</Text>
-									</Button>
-								</Body>
 								<Right>
 									<Text>4 min read</Text>
 								</Right>
