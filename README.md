@@ -34,3 +34,11 @@ Install the [Expo](https://expo.io/) client app on your iOS or Android phone and
 # Running App on a simulator or virtual device
 
 Instead of using `npm start` command, you can specify a virtual device `npm start -avd { DEVICE_NAME like 'Nexus_5_API_25' }`
+
+# Screenshots
+
+<img src="./assets/screenshots/home.png" alt="Home" width=400/>
+<br />
+<img src="./assets/screenshots/drawer.png" alt="Drawer" width=400 />
+
+
