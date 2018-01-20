@@ -1,11 +1,11 @@
 import * as React from 'react'
 import {
-  Text,
   Content,
   Container
 } from 'native-base'
 import AppHeader from '../../components/AppHeader/AppHeader'
 import FooterNav from '../../components/FooterNav/FooterNav'
+import Stream from '../../components/Stream/Stream'
 
 interface IHomeScreenProps {
   navigation: any
@@ -18,9 +18,7 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
         <AppHeader openDrawer={() => this.props.navigation.navigate("DrawerOpen")} />
 
         <Content padder>
-          <Text>
-            Hello BlogApp!
-          </Text>
+          <Stream />
         </Content>
 
         <FooterNav
