@@ -5,9 +5,10 @@ mobile app using React-native with typescript for [blog-app-api](https://github.
 ## Preparing the development environment
 
 # Preparing API
-You may need to follow instructions in [blog-app-api](https://github.com/aliasmael/blog-app-api) repository
 
-# Start a development server
+You may need to follow instructions in [blog-app-api](https://github.com/aliasmael/blog-app-api) repository.
+
+# Starting development server
 Install packages
  ```sh
 cd /root-folder/
