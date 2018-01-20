@@ -1,65 +1,68 @@
 import * as React from 'react'
 import { Component } from 'react'
-import { Footer, FooterTab, Button, Icon } from 'native-base';
+import { Footer, FooterTab, Button, Icon, Text } from 'native-base'
 import style from './style'
+import { FooterItem } from './Models'
 
 interface IFooterNavProps {
-	openHome: () => void,
-	openExplore: () => void,
-	openNotifications: () => void,
-	openSetting: () => void,
-	selectedTab:
+	navigation: any,
+	screen:
 	'Home'
 	| 'Explore'
 	| 'Notifications'
-	| 'Setting'
+	| 'Settings'
 }
+
+const footerItems: FooterItem[] = [
+	{
+		title: 'Home',
+		icon: 'home',
+		screen: 'Home'
+	},
+	{
+		title: 'Explore',
+		icon: 'search',
+		screen: 'Explore'
+	},
+	{
+		title: 'Notifications',
+		icon: 'notifications',
+		screen: 'Notifications'
+	},
+	{
+		title: 'Settings',
+		icon: 'ios-settings',
+		screen: 'Settings'
+	},
+]
 
 export default class FooterNav extends Component<IFooterNavProps>  {
 	render() {
 		return (
 			<Footer style={style.footer}>
 				<FooterTab style={style.footer}>
-					<Button
-						onPress={() => this.props.openHome()}
-						style={this.props.selectedTab == "Home" ? style.buttonActive : {}}
-						active={this.props.selectedTab == "Home" ? true : false}
-					>
-						<Icon 
-							style={this.props.selectedTab == "Home" ? style.iconActive : style.icon}
-							name="home" 
-							/>
-					</Button>
-					<Button
-						onPress={() => this.props.openExplore()}
-						style={this.props.selectedTab == "Explore" ? style.buttonActive : {}}
-						active={this.props.selectedTab == "Explore" ? true : false}
-					>
-						<Icon 
-							style={this.props.selectedTab == "Explore" ? style.iconActive : style.icon}
-							name="search" 
-							/>
-					</Button>
-					<Button
-						onPress={() => this.props.openNotifications()}
-						style={this.props.selectedTab == "Notifications" ? style.buttonActive : {}}
-						active={this.props.selectedTab == "Notifications" ? true : false}
-					>
-						<Icon 
-							style={this.props.selectedTab == "Notifications" ? style.iconActive : style.icon}
-							name="notifications" 
-							/>
-					</Button>
-					<Button
-						onPress={() => this.props.openSetting()}
-						style={this.props.selectedTab == "Setting" ? style.buttonActive : {}}
-						active={this.props.selectedTab == "Setting" ? true : false}
-					>
-						<Icon 
-							style={this.props.selectedTab == "Setting" ? style.iconActive : style.icon}
-							name="ios-settings" 
-							/>
-					</Button>
+					{
+						footerItems.map((item: FooterItem) => {
+							return (
+								<Button
+									key={item.screen}
+									onPress={() => this.props.navigation.navigate(item.screen)}
+									style={this.props.screen == item.screen ? style.buttonActive : {}}
+									active={this.props.screen == item.screen ? true : false}
+								>
+									<Icon
+										style={this.props.screen == item.screen ? style.iconActive : style.icon}
+										name={item.icon}
+									/>
+									<Text
+										style={this.props.screen == item.screen ? style.iconTextActive : style.iconText}
+									>
+										{item.title}
+									</Text>
+								</Button>
+							)
+						}, footerItems)
+					}
 				</FooterTab>
 			</Footer>
 		);

@@ -14,7 +14,15 @@ const style = StyleSheet.create({
 		color: textColor
 	},
 	iconActive: {
-		color: activeColor
+		color: activeColor		
+	},
+	iconText: {
+		color: textColor,
+		fontSize: 8
+	},
+	iconTextActive: {
+		color: activeColor,
+		fontSize: 8
 	}
 
 })
