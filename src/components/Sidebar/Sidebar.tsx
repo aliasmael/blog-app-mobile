@@ -4,7 +4,7 @@ import { Container, Content, Text, List, ListItem, Header, Icon, Body } from 'na
 import style from './style'
 import { User } from '../../models/Models'
 import { MenuItem } from './Models'
-import { Image, View } from 'react-native';
+import { Image } from 'react-native'
 
 interface ISidebarProps {
 	navigation: any
