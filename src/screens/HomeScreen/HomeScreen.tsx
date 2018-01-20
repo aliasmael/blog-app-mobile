@@ -24,11 +24,8 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
         </Content>
 
         <FooterNav
-          openHome={() => this.props.navigation.navigate("Home")}
-          openExplore={() => this.props.navigation.navigate("Explore")}
-          openNotifications={() => this.props.navigation.navigate("Notifications")}
-          openSetting={() => this.props.navigation.navigate("Settings")}
-          selectedTab="Home"
+          navigation={this.props.navigation}
+          screen="Home"
         />
       </Container>
     );

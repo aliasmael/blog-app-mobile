@@ -24,11 +24,8 @@ export default class ExploreScreen extends React.Component<IExploreScreenProps> 
         </Content>
 
         <FooterNav
-          openHome={() => this.props.navigation.navigate("Home")}
-          openExplore={() => this.props.navigation.navigate("Explore")}
-          openNotifications={() => this.props.navigation.navigate("Notifications")}
-          openSetting={() => this.props.navigation.navigate("Settings")}
-          selectedTab="Explore"
+          navigation={this.props.navigation}
+          screen="Explore"
         />
       </Container>
     );
