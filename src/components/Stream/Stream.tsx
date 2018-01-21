@@ -4,31 +4,37 @@ import { Image, View } from 'react-native'
 import { Container, Content, Card, CardItem, Thumbnail, Text, Left, Body, Right } from 'native-base'
 import * as moment from 'moment'
 import { Blog } from './Models'
+import { Loader } from '../Loader/Loader'
 import style from './style'
-import { service } from '../../services/MockService'
+
+import { connect } from 'react-redux'
+import { fetchStream } from './redux/actions'
+import { AppStore } from '../../models/Models'
+import store from '../../redux/store'
 
 interface IStreamProps {
-
+	blogs: Blog[],
+	fetching: boolean,
+	fetched: boolean,
+	error: boolean
 }
 
-interface IStreamState {
-	blogs: Blog[]
-}
-
-let initialState: IStreamState = {
-	blogs: []
-}
-
-export default class Stream extends Component<IStreamProps, IStreamState> {
+class Stream extends Component<IStreamProps> {
 	componentWillMount() {
-		this.setState(initialState)
-		let response: Blog[] = service.fetchBlogs()
-		this.setState({ blogs: response })
+		store.dispatch(fetchStream())
 	}
 
 	render() {
+		const { blogs, fetching } = this.props
+
+		if(fetching) {
+			return (
+				<Loader />
+			)
+		}
+
 		return (
-			this.state.blogs.map(blog => (
+			blogs.map(blog => (
 				<Container key={blog.id} style={style.container}>
 					<Content>
 						<Card>
@@ -64,3 +70,16 @@ export default class Stream extends Component<IStreamProps, IStreamState> {
 		)
 	}
 }
+
+function select(state: AppStore): IStreamProps {
+	return {
+		blogs: state.stream.blogs,
+		fetching: state.stream.fetching,
+		fetched: state.stream.fetched,
+		error: state.stream.error
+	};
+}
+
+export default connect(
+	select
+)(Stream)
