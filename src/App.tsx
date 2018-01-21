@@ -4,6 +4,8 @@ import * as React from 'react'
 import { Container } from 'native-base'
 import style from './style'
 import Navigator from './navigation/index'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
 interface IAppProps {
 
@@ -42,9 +44,11 @@ export default class App extends React.Component<IAppProps, IAppState> {
     }
 
     return (
-      <Container style={style.container}>
-        <Navigator />
-      </Container>
+      <Provider store={store}>
+        <Container style={style.container}>
+          <Navigator />
+        </Container>
+      </Provider>
     );
   }
 }
