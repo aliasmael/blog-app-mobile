@@ -13,3 +13,10 @@ export interface Blog {
 	data: BlogData,
 	trace: Trace
 }
+
+export interface IStreamState {
+	blogs: Blog[],
+	fetching: boolean,
+	fetched: boolean,
+	error: boolean
+}
