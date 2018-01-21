@@ -1,3 +1,5 @@
+import { IStreamState } from '../components/Stream/Models'
+
 export interface Signature {
 	at: string,
 	by: string
@@ -16,4 +18,8 @@ export interface User {
 	title: string,
 	profileimage: string,
 	company?: string
+}
+
+export interface AppStore {
+	stream: IStreamState
 }
