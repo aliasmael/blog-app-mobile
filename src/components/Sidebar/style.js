@@ -10,7 +10,7 @@ const style = StyleSheet.create({
 	},
 	sidebarHeader: {
 		backgroundColor: backgroundColor,
-		height: 110,
+		height: 130,
 		flex: 1,
 		flexDirection: 'column',
 		justifyContent: 'center',
@@ -20,7 +20,8 @@ const style = StyleSheet.create({
 	sidebarBody: {
 		flex: 1, 
 		justifyContent: 'center', 
-		alignItems: 'center'
+		alignItems: 'center',
+		marginTop: 15
 	},
 	profileImage: {
 		width: 40,
