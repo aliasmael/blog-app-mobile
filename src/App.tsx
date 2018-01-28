@@ -31,6 +31,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
       'Roboto': require('native-base/Fonts/Roboto.ttf'),
       'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
       'Ionicons': require('native-base/Fonts/Ionicons.ttf'),
+      'FontAwesome': require('native-base/Fonts/FontAwesome.ttf'),
     });
   }
 
