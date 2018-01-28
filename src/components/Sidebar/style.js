@@ -44,7 +44,8 @@ const style = StyleSheet.create({
 	},
 	menuItemIcon: {
 		color: textColor,
-		marginRight: 10
+		marginRight: 10,
+		fontSize: 15		
 	},
 	subItem: {
 		backgroundColor: '#333a49'

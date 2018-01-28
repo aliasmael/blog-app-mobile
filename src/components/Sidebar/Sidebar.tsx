@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { Component } from 'react'
-import { Container, Content, Text, List, ListItem, Header, Icon, Body } from 'native-base'
+import { Container, Content, Text, List, ListItem, Header, Body } from 'native-base'
 import style from './style'
 import { User } from '../../models/Models'
 import { MenuItem } from './Models'
 import { Image } from 'react-native'
+import CustomIcon from '../CustomIcon'
 
 interface ISidebarProps {
 	navigation: any
@@ -13,7 +14,7 @@ interface ISidebarProps {
 const menuItems: MenuItem[] = [
 	{
 		title: 'Profile',
-		icon: 'person',
+		icon: 'user',
 		navigation: 'Profile'
 	},
 	{
@@ -25,6 +26,11 @@ const menuItems: MenuItem[] = [
 		title: 'Explore',
 		icon: 'search',
 		navigation: 'Explore'
+	},
+	{
+		title: 'Settings',
+		icon: 'wrench',
+		navigation: 'Settings'
 	}
 ]
 
@@ -62,7 +68,7 @@ export default class Sidebar extends Component<ISidebarProps> {
 									button
 									style={style.menuItem}
 									onPress={() => this.props.navigation.navigate(item.navigation)}>
-									<Icon style={style.menuItemIcon} name={item.icon} />
+									<CustomIcon name={item.icon} family='FontAwesome' style={style.menuItemIcon} />
 									<Text style={style.menuItemText}>{item.title}</Text>
 								</ListItem>
 							);
